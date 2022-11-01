@@ -1,0 +1,27 @@
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+  
+  .custom-shape-divider-bottom-1655719888 {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      line-height: 0;
+      transform: rotate(180deg);
+  }
+  
+  .custom-shape-divider-bottom-1655719888 svg {
+      position: relative;
+      display: block;
+      width: calc(120% + 1.3px);
+      height: 66px;
+  }
+  
+  .custom-shape-divider-bottom-1655719888 .shape-fill {
+      fill: #ffffff;
+  }

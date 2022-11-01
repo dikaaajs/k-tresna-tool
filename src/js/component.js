@@ -1,8 +1,9 @@
 const root = document.getElementById("root");
-const header = document.getElementById("header");
-
+const paketSd = ["pilpak", "opsi1a", "opsi2a", "opsi3"];
+const paketRemaja = ["pilpak", "opsi1a", "opsi2a", "opsi3", "opsi4"];
+const paketDewasa = ["pilpak", "opsi1b", "opsi2b", "opsi3", "opsi4"];
 const database = {
-  pilihPaket: [
+  pilpak: [
     {
       id: "sd",
       nama: "Paket Bocil",
@@ -47,12 +48,132 @@ const database = {
       ],
     },
   ],
+  opsi1a: [
+    {
+      nama: "opsi1a",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 0,
+    },
+    {
+      nama: "penyet",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 1000,
+    },
+    {
+      nama: "mujaer",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 1000,
+    },
+  ],
+  opsi1b: [
+    {
+      nama: "opsi1b",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 0,
+    },
+    {
+      nama: "penyet",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 1000,
+    },
+    {
+      nama: "mujaer",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 1000,
+    },
+  ],
+  opsi2a: [
+    {
+      nama: "opsi2a",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 0,
+    },
+    {
+      nama: "penyet",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 1000,
+    },
+    {
+      nama: "mujaer",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 1000,
+    },
+  ],
+  opsi2b: [
+    {
+      nama: "opsi2b",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 0,
+    },
+    {
+      nama: "penyet",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 1000,
+    },
+    {
+      nama: "mujaer",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 1000,
+    },
+  ],
+  opsi3: [
+    {
+      nama: "opsi3",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 0,
+    },
+    {
+      nama: "penyet",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 1000,
+    },
+    {
+      nama: "mujaer",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 1000,
+    },
+  ],
+  opsi4: [
+    {
+      nama: "opsi4",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 0,
+    },
+    {
+      nama: "penyet",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 1000,
+    },
+    {
+      nama: "mujaer",
+      deskripsi:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit quas harum!",
+      hargaTambahan: 1000,
+    },
+  ],
 };
 
 class Header extends React.Component {
   render() {
     return (
-      <div className="overflow-hidden header">
+      <div className="header overflow-hidden">
         <h1 id="logo" className="text-black">
           k-tresna
         </h1>
@@ -92,53 +213,166 @@ class Header extends React.Component {
   }
 }
 
-class Main extends React.Component {
+class Judul extends React.Component {
   render() {
     return (
-      <section>
+      <div>
         <div>
           <img
-            src="assets/img/logo-badag.jpg"
+            src="./src/img/logo-badag.jpg"
             alt="gambar jumbotron"
-            className="mx-auto w-[10rem] relative top-10 -z-10"
+            className="img-judul"
           />
-          <h1 className="text-center text-slate-600 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight">
-            K-Tresna Box
-          </h1>
-          <p className="text-center text-slate-900 text-opacity-60 text-[15px] leading-[15px] mt-[5px] mx-[20px]">
+          <h1 className="h1-judul">K-Tresna Box</h1>
+          <p className="p-judul">
             selamat datang di <span className="text-red-600">k-tresna box</span>
             . disini anda bisa dengan mudah memesan nasi box k-tresna
           </p>
         </div>
-      </section>
-    );
-  }
-}
-
-class Contructor extends React.Component {
-  render() {
-    return (
-      <div
-        className=" pilihan mt-[3rem]  mx-[10px] px-[10px] border-solid  rounded-[5px] bg-[#21f0ff10] py-10"
-        id="pilpak"
-      >
-        <h3 className="text-center pt-[20px]"> Pilih Paket</h3>
-        <p className="text-center text-slate-900 text-opacity-60">
-          pilihlah paket sesuai dengan keinginan anda
-        </p>
-        <br />
       </div>
     );
   }
 }
 
-// pilih paket
-class Pilpak extends React.Component {
+// constructor card
+class Contructor extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: "",
+      data: [],
+      fullPage: 0,
+      page: 0,
+      status: "card1",
+      section: "",
+    };
+
+    this.handleClickCard1 = this.handleClickCard1.bind(this);
+    this.nextButton = this.nextButton.bind(this);
+    this.prevButton = this.prevButton.bind(this);
+  }
+
+  handleClickCard1(e) {
+    const parent = e.target.parentElement.parentElement;
+    this.state.data = [];
+
+    // for toogle
+    if (parent.classList.contains("active")) {
+      return parent.classList.remove("active");
+    }
+    removeAllClassCard();
+    parent.classList.add("active");
+    this.state.id = parent.getAttribute("id");
+
+    // proses data
+    if (this.state.id == "sd") {
+      this.state.data = paketSd;
+      this.state.fullPage = this.state.data.length;
+    } else if (this.state.id == "remaja") {
+      this.state.data = paketRemaja;
+      this.state.fullPage = this.state.data.length;
+    } else if (this.state.id == "dewasa") {
+      this.state.data = paketDewasa;
+      this.state.fullPage = this.state.data.length;
+    }
+  }
+
+  handleClickCard2() {}
+
+  // handle next and prev button
+  nextButton() {
+    if (this.state.data == 0) {
+      return alert("pilih dulu paketnya gan");
+    } else {
+      this.state.page++;
+    }
+
+    // section akan menghasilkan pilpak / opsi1 / opsi2 / opsi3 / opsi4
+
+    const tmp = this.state.data[this.state.page];
+    this.setState({
+      status: "card2",
+      section: tmp,
+    });
+    console.log(this.state);
+  }
+
+  prevButton() {
+    this.state.page--;
+
+    const tmp = this.state.data[this.state.page];
+    if (tmp == "pilpak") {
+      this.setState({
+        status: "card1",
+      });
+    }
+    this.setState({
+      section: tmp,
+    });
+  }
+
   render() {
-    const wadah = database.pilihPaket.map((i) => {
+    console.log(this.state);
+    return (
+      <div className="div-constructor" id="pilpak">
+        <h3 className="pt-[20px]"> Pilih Paket</h3>
+        <p className="p-constructor">
+          pilihlah paket sesuai dengan keinginan anda
+        </p>
+        <br />
+        {/* card1 / card2 */}
+        <Card
+          status={this.state.status}
+          section={this.state.section}
+          handleClick1={this.handleClickCard1}
+          handleClick2={this.handleClickCard2}
+        />
+        <br />
+        {this.state.page !== 0 && (
+          <button className="btn" onClick={this.prevButton}>
+            prev
+          </button>
+        )}
+        {this.state.page !== this.state.fullPage - 1 && (
+          <button className="btn" onClick={this.nextButton}>
+            next
+          </button>
+        )}
+      </div>
+    );
+  }
+}
+
+class Card extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    if (this.props.status == "card1") {
+      return <Card1 handleClick={this.props.handleClick1} />;
+    } else {
+      return (
+        <Card2
+          section={this.props.section}
+          handleClick={this.props.handleClick2}
+        />
+      );
+    }
+  }
+}
+
+// card1
+class Card1 extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const wadah = database.pilpak.map((i) => {
       // handle tag
       const tag = i.tags.map((tag) => {
-        return <li className="tag">{tag}</li>;
+        return <li className="tag-header-card-pilpak">{tag}</li>;
       });
 
       // handle benefit
@@ -153,53 +387,58 @@ class Pilpak extends React.Component {
         return <li>• {show}</li>;
       });
 
+      // return wadah
       return (
-        <div class="card-package relative" id={i.id}>
-          <div class="header-card inline-flex content-between h-[5rem] w-full bg-[#0f172a] items-center relative rounded overflow-hidden">
-            {/* header */}
-            <div id="first" class="w-[80%] text-white text-left pl-2">
-              <div class="tags">
-                <ul class="inline-flex gap-[10px]">{tag}</ul>
+        // <div className={this.props.status}>
+        <div className="card-pilpak" id={i.id}>
+          {/* header section */}
+          <div className="header-card-pilpak">
+            <div className="w-[80%] pl-2 text-left text-white">
+              <div>
+                <ul className="inline-flex gap-[10px]">{tag}</ul>
               </div>
-              <div class="tittle mt-[5px]">
+              <div className="tittle mt-[5px]">
                 <h1>{i.nama}</h1>
               </div>
             </div>
-            <div class="image-card" id="second">
+            <div className="image-card" id="second">
               <img
                 src="./assets/img/imly-thali-1024x731.jpg"
                 alt="paket bocil SD"
-                class="h-[7rem] right-[-20px] rounded-full absolute top-[-15px] z-10"
+                className="img-header-card-pilpak"
               />
             </div>
           </div>
 
           {/* price section */}
-          <div class="inline-flex content-between w-full py-[10px] price-card">
-            <div class="text-left w-1/2 ml-2">
+          <div className="price-section-pilpak">
+            <div className="ml-2 w-1/2 text-left">
               <h1>harga:</h1>
             </div>
-            <div class="text-right w-1/2 mr-2">
+            <div className="mr-2 w-1/2 text-right">
               <h1>{i.harga}</h1>
             </div>
           </div>
 
           {/* benefit section */}
-          <div class="benefit-card text-left ml-2 mt-[10px]">
+          <div className="benefit-section-pilpak">
             <h1>apa saja yang di dapatkan ?</h1>
-            <ul class="list-benefit">{benefit}</ul>
+            <ul className="list-benefit">{benefit}</ul>
           </div>
 
-          <div class="button mb-3 text-right mr-3">
-            <button class="bg-green-500 text-white rounded-[5px] px-[10px] py-[5px] card-button md:absolute bottom-[20px] right-[20px]">
+          {/* button section */}
+          <div className="button mb-3 mr-3 text-right">
+            <button className="nice-button" onClick={this.props.handleClick}>
               Pilih
             </button>
           </div>
         </div>
+        // </div>
       );
     });
+
     return (
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center gap-[25px]">
+      <div className="wadah-pilpak">
         {/* perulangan disini */}
         {wadah}
       </div>
@@ -207,35 +446,68 @@ class Pilpak extends React.Component {
   }
 }
 
-// pilih ayam
-class AyamIkan extends React.Component {
+// card2
+class Card2 extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    return (
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[25px]">
-        {/* card section */}
-        database.pilihan
-        <div className=" card-ayam bg-[#0f172a] flex content-between items-center h-[9rem] relative overflow-hidden text-neutral-200">
-          <div className="gambar-ayam w-[30%]">
-            <img
-              src="assets/img/imly-thali-1024x731.jpg"
-              alt=""
-              className="h-[11rem] absolute top-[-13px] left-[-75px] rounded-full"
-            />
+    const section = this.props.section;
+    let data = [];
+    switch (section) {
+      case "opsi1a":
+        data = database.opsi1a;
+        break;
+      case "opsi1b":
+        data = database.opsi1b;
+        break;
+      case "opsi2a":
+        data = database.opsi2a;
+        break;
+      case "opsi2b":
+        data = database.opsi2b;
+        break;
+      case "opsi3":
+        data = database.opsi3;
+        break;
+      case "opsi4":
+        data = database.opsi4;
+        break;
+    }
+
+    const wadah = data.map((i) => {
+      // return wadah
+      return (
+        <div class="card2">
+          {/* image */}
+          <div class="w-[30%]">
+            <img src="./src/img/mellowcup-3.jpg" alt="" class="img-card2" />
           </div>
-          <div className="keterangan-ayam w-[60%] ml-[30px] py-[20px]">
-            <h1>Ayam Goreng</h1>
-            <p className="sm:text-[13px] leading-[17px] opacity-[80%]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-              suscipit quas harum!
+
+          {/* keterangan */}
+          <div class="info-card2">
+            <h1>{i.nama}</h1>
+            <p class="leading-[17px] opacity-[80%] sm:text-[13px]">
+              {i.deskripsi}
             </p>
-            <div className="align-middle mt-[8px]">
-              <button className="bg-green-500 text-white rounded-[5px] px-[8px] py-[3px] card-button text-[13px] inline">
+            <div class="mt-[8px] align-middle">
+              <button
+                class="button-card2"
+                onClick={this.props.handleClickCard2}
+              >
                 Pilih
               </button>
-              <p className="inline text-[#babcbe]"></p>
+              <p class="inline text-[#babcbe]"></p>
             </div>
           </div>
         </div>
+      );
+    });
+    return (
+      <div className="wadah-card2">
+        {/* perulangan disini */}
+        {wadah}
       </div>
     );
   }
@@ -243,7 +515,9 @@ class AyamIkan extends React.Component {
 
 ReactDOM.render(
   <>
-    <Pilpak />
+    <Header />
+    <Judul />
+    <Contructor />
   </>,
   root
 );

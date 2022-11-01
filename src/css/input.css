@@ -2,3 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
+/* button style */
+.nice-button {
+    @apply transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 px-[10px] py-[5px] bottom-[20px] right-[20px] rounded-[5px] text-white md:absolute;
+}
+
+.btn {
+    @apply px-[10px] py-[5px] rounded-[5px] bg-black text-white mx-[7px]
+}
+
+/* Judul section */
+.img-judul {
+    @apply relative top-10 -z-10 mx-auto w-[10rem];
+}
+
+.h1-judul {
+    @apply text-center text-4xl font-extrabold tracking-tight text-slate-600 sm:text-5xl lg:text-6xl;
+}
+
+.p-judul {
+    @apply mx-[20px] mt-[5px] text-center text-[15px] leading-[15px] text-slate-900 text-opacity-60;
+}
+
+/* Constructor section */
+.div-constructor {
+    @apply mx-[10px]  mt-[3rem] rounded-[5px] border-solid bg-[#21f0ff10] px-[10px] py-10 text-center;
+}
+
+.p-constructor {
+    @apply text-slate-900 text-opacity-60;
+}
+
+/* card1 section */
+.wadah-pilpak {
+    @apply grid grid-cols-1 gap-[25px] text-center md:grid-cols-2 lg:grid-cols-3;
+}
+
+.card-pilpak {
+    @apply relative border-[1px] border-solid border-black rounded-[9px] duration-[1s] h-auto bg-white;
+}
+
+.header-card-pilpak {
+    @apply relative inline-flex h-[5rem] w-full content-between items-center overflow-hidden rounded bg-[#0f172a];
+}
+
+.tag-header-card-pilpak {
+    @apply py-[5px] px-[7px] bg-white rounded-[6px] text-black text-[10px];
+}
+
+.img-header-card-pilpak {
+    @apply absolute right-[-20px] top-[-15px] z-10 h-[7rem] rounded-full
+}
+
+.price-section-pilpak {
+    @apply border-b-[2px] border-dashed border-b-[#000000b0] inline-flex w-full content-between py-[10px]
+}
+
+.benefit-section-pilpak {
+    @apply ml-2 mt-[10px] text-left 
+}
+
+/* card 2 section */
+.wadah-card2 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[25px]
+}
+
+.card2 {
+    @apply relative flex h-[9rem] content-between items-center overflow-hidden bg-[#0f172a] text-neutral-200 rounded-[9px] shadow-lg
+}
+
+.img-card2 {
+    @apply absolute top-[-13px] left-[-75px] h-[11rem] rounded-[50%]
+}
+
+.info-card2 {
+    @apply ml-[30px] w-[60%] py-[20px] text-left
+}
+
+.button-card2 {
+    @apply inline rounded-[5px] bg-green-500 px-[8px] py-[3px] text-[13px] text-white
+}
