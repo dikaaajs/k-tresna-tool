@@ -256,11 +256,13 @@ class Contructor extends React.Component {
     const parent = e.target.parentElement.parentElement;
     this.state.data = [];
 
-    // for toogle
+    // remove class
     if (parent.classList.contains("active")) {
       return parent.classList.remove("active");
     }
-    removeAllClassCard();
+
+    removeClassActive();
+
     parent.classList.add("active");
     this.state.id = parent.getAttribute("id");
 
@@ -277,7 +279,9 @@ class Contructor extends React.Component {
     }
   }
 
-  handleClickCard2() {}
+  handleClickCard2(e) {
+    alert(e);
+  }
 
   // handle next and prev button
   nextButton() {
@@ -294,7 +298,6 @@ class Contructor extends React.Component {
       status: "card2",
       section: tmp,
     });
-    console.log(this.state);
   }
 
   prevButton() {
@@ -312,7 +315,6 @@ class Contructor extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="div-constructor" id="pilpak">
         <h3 className="pt-[20px]"> Pilih Paket</h3>
@@ -454,29 +456,30 @@ class Card2 extends React.Component {
 
   render() {
     const section = this.props.section;
-    let data = [];
-    switch (section) {
-      case "opsi1a":
-        data = database.opsi1a;
-        break;
-      case "opsi1b":
-        data = database.opsi1b;
-        break;
-      case "opsi2a":
-        data = database.opsi2a;
-        break;
-      case "opsi2b":
-        data = database.opsi2b;
-        break;
-      case "opsi3":
-        data = database.opsi3;
-        break;
-      case "opsi4":
-        data = database.opsi4;
-        break;
-    }
+    consoole.log(section)
+    // let data = [];
+    // switch (section) {
+    //   case "opsi1a":
+    //     data = database.opsi1a;
+    //     break;
+    //   case "opsi1b":
+    //     data = database.opsi1b;
+    //     break;
+    //   case "opsi2a":
+    //     data = database.opsi2a;
+    //     break;
+    //   case "opsi2b":
+    //     data = database.opsi2b;
+    //     break;
+    //   case "opsi3":
+    //     data = database.opsi3;
+    //     break;
+    //   case "opsi4":
+    //     data = database.opsi4;
+    //     break;
+    // }
 
-    const wadah = data.map((i) => {
+    const wadah = database.pilpak.map((i) => {
       // return wadah
       return (
         <div class="card2">
@@ -492,10 +495,7 @@ class Card2 extends React.Component {
               {i.deskripsi}
             </p>
             <div class="mt-[8px] align-middle">
-              <button
-                class="button-card2"
-                onClick={this.props.handleClickCard2}
-              >
+              <button class="button-card2" onClick={this.props.handleClick}>
                 Pilih
               </button>
               <p class="inline text-[#babcbe]"></p>

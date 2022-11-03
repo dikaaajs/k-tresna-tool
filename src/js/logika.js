@@ -28,10 +28,9 @@ document.addEventListener("render", () => {
 });
 
 // remove all class
-function removeAllClassCard() {
+function removeClassActive() {
   let card = document.querySelectorAll(".card-pilpak");
   card.forEach((i) => {
-    console;
     i.classList.remove("active");
   });
 }
